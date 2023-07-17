@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/general.css"th:href="@{/css/general.css}">
+    <link rel="stylesheet" type="text/css" href="../css/register.css"th:href="@{/css/register.css}">
+</head>
+<body>
+<nav class="ui attached segment m-padded-tb-mini m-shadow-small" >
+    <div class="ui container">
+        <div class="ui secondary stackable menu">
+            <img src="../static/images/logo.png" th:src="@{/images/logo.png}" style="width: 80px">
+            <h1 class="ui blue header item">QUTCSSA</h1>
+            <a href="#" class="m-item item blue m-mobile-hide" th:classappend="${n==1}?'active'" th:href="@{/register/goHomePage}"><i class=" home icon"></i>首页</a>
+            <a href="#" class="m-item violet item m-mobile-hide" th:classappend="${n==2}?'active'" onclick="joinUsOnClick()"><i class=" idea icon"></i>加入我们</a>
+            <a href="#" class="m-item pink item m-mobile-hide" th:classappend="${n==3}?'active'"><i class=" tags icon"></i>我们的活动</a>
+            <a href="#" class="m-item orange item m-mobile-hide" th:classappend="${n==4}?'active'"><i class=" clone icon"></i>卡商们</a>
+            <a href="#" class="m-item green item m-mobile-hide" th:classappend="${n==5}?'active'"><i class=" info icon"></i>关于我们</a>
+        </div>
+    </div>
+</nav>
+<div id="loginDiv">
+    <form>
+        <h1>加入学生会</h1>
+        <p>姓名:<input id="userNname" name="userName" type="text" autofocus required><label id="name_trip"></label></p>
+        <p>想加入的部门
+        <select>
+            <option>活动部</option>
+            <option>摄影部</option>
+            <option>市场部</option>
+        </select>
+        </p>
+        <p>
+            电子邮件:
+            <input id="email" type="email" required>
+            <label id="emil_trip"></label>
+        </p>
+
+        <p style="text-align: center;">
+            <input type="button" class="button" onclick="submitT()" value="提交">
+            <input type="reset" class="button" onclick="myFunctionReset()" value="重置">
+        </p>
+    </form>
+</div>
+<script src="lib/jquery.min.js"></script>
+<script src="register.js"></script>
+
+<script>
+    function joinUsOnClick(){
+        location.reload();
+    }
+</script>
+</body>
+</html>
